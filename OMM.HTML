@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Omm Prakash | Developer Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            background: #050816;
+            overflow-x: hidden;
+        }
+
+        /* BEAUTIFUL BACKGROUND */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #6c63ff;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.25;
+            top: -150px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: #00d4ff;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.20;
+            bottom: -150px;
+            right: -100px;
+            z-index: -1;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            width: 100%;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            background: rgba(5, 8, 22, 0.75);
+            backdrop-filter: blur(12px);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hello {
+            color: #00d4ff;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #00d4ff;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #b8c1d9;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #c5c9d6;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 14px 30px;
+
+            background: #00d4ff;
+            color: #050816;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 30px #00d4ff;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #00d4ff;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+
+            padding: 40px;
+            border-radius: 20px;
+
+            backdrop-filter: blur(10px);
+
+            text-align: center;
+        }
+
+        .about p {
+            color: #c5c9d6;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            padding: 30px 20px;
+            text-align: center;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            border-color: #00d4ff;
+            box-shadow: 0 0 25px rgba(0,212,255,0.25);
+        }
+
+        .skill .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #aeb5c7;
+        }
+
+        /* GOAL */
+
+        .goal {
+            max-width: 900px;
+            margin: auto;
+
+            text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                rgba(0,212,255,0.1),
+                rgba(108,99,255,0.1)
+            );
+
+            border: 1px solid rgba(0,212,255,0.2);
+
+            padding: 50px;
+
+            border-radius: 25px;
+        }
+
+        .goal p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #c5c9d6;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #b8c1d9;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+
+            background: rgba(0,0,0,0.3);
+
+            color: #8992a8;
+        }
+
+        footer strong {
+            color: #00d4ff;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            OMM PRAKASH
+        </div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#goal">Goal</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hello">
+                👋 Hello, I'm
+            </div>
+
+            <h1>
+                OMM <span>PRAKASH</span>
+            </h1>
+
+            <h2>
+                BSc ITM Student | Aspiring AI & Software Engineer
+            </h2>
+
+            <p>
+                I am a passionate technology student who enjoys learning
+                programming, problem solving and building things with code.
+                I am continuously developing my skills in programming,
+                data structures, databases and web technologies.
+            </p>
+
+            <a href="#skills" class="button">
+                Explore My Skills 🚀
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                I am Omm Prakash, a BSc ITM student with a strong interest
+                in software development and emerging technologies.
+                My learning journey started with programming fundamentals
+                and has expanded into multiple areas of computer science.
+            </p>
+
+            <br>
+
+            <p>
+                I believe that consistent learning, practice and building
+                real projects are the keys to becoming a better developer.
+                My goal is to keep improving my technical skills and
+                eventually work in the field of Artificial Intelligence
+                and software engineering.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            My <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+
+            <div class="skill">
+
+                <div class="icon">☕</div>
+
+                <h3>Java</h3>
+
+                <p>
+                    Learning Java programming,
+                    OOP and problem solving.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">🐍</div>
+
+                <h3>Python</h3>
+
+                <p>
+                    Python programming and
+                    exploring its applications.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">🌐</div>
+
+                <h3>HTML</h3>
+
+                <p>
+                    Building and designing
+                    web pages.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">⚙️</div>
+
+                <h3>C</h3>
+
+                <p>
+                    Programming fundamentals
+                    and logic building.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">💻</div>
+
+                <h3>C++</h3>
+
+                <p>
+                    Programming concepts and
+                    object-oriented programming.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">🧠</div>
+
+                <h3>Data Structures</h3>
+
+                <p>
+                    Learning algorithms,
+                    structures and problem solving.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">🗄️</div>
+
+                <h3>SQL</h3>
+
+                <p>
+                    Working with databases
+                    and SQL queries.
+                </p>
+
+            </div>
+
+
+            <div class="skill">
+
+                <div class="icon">🤖</div>
+
+                <h3>AI / ML</h3>
+
+                <p>
+                    Exploring Artificial Intelligence
+                    and Machine Learning.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- GOAL -->
+
+    <section id="goal">
+
+        <h2 class="section-title">
+            My <span>Vision</span>
+        </h2>
+
+        <div class="goal">
+
+            <p>
+                🚀 My goal is to transform my knowledge into real-world
+                projects and become a skilled software and AI engineer.
+            </p>
+
+            <br>
+
+            <p>
+                I am focused on improving every day, learning new
+                technologies and turning ideas into useful digital
+                solutions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Let's <span>Connect</span>
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                Thanks for visiting my website! 🚀
+            </p>
+
+            <a href="#home" class="button">
+                Back To Top ↑
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 <strong>Omm Prakash</strong> |
+        Personal Portfolio
+
+    </footer>
+
+
+</body>
+</html>
